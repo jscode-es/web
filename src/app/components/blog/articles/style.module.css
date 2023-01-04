@@ -1,0 +1,51 @@
+.container {
+	width: 100%;
+}
+
+.top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+.btn {
+	background: #6366f1;
+	font-size: 17px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+}
+
+.content {
+	display: flex;
+	gap: 40px;
+	justify-content: space-between;
+}
+
+.content > .link {
+	width: 100%;
+}
+
+.content > .link > .image {
+	background: #1d192e;
+	height: 220px;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.content > .link > span {
+	color: #6366f1;
+	font-size: 15px;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.content > .link > h2 {
+	margin-bottom: 20px;
+	color: #fffffff0;
+}
+
+.content > .link > p {
+	color: #7162b6;
+}
