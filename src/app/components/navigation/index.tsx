@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { Search } from '../search';
 import style from './style.module.css';
 
 export function Navigation() {
@@ -5,9 +7,20 @@ export function Navigation() {
 		<div className={style.container}>
 			<div className={style.bg}></div>
 			<div className={style.content}>
-				<div>logo</div>
-				<div>Buscador de blog</div>
-				<div>Ir a repositorios</div>
+				<div>
+					<Link href='/'>
+						<img
+							src='/jscode-logo.png'
+							className={style.logo}
+						/>
+					</Link>
+				</div>
+				<div>
+					<Search />
+				</div>
+				<div className={style.btns}>
+					<div>buton</div>
+				</div>
 			</div>
 		</div>
 	);

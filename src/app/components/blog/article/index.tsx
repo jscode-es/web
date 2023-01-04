@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import style from './style.module.css';
 
-export function Article({ data: { title, content } }: any) {
+export function Article({ data: { content } }: any) {
 	return (
 		<div className={style.container}>
 			<div

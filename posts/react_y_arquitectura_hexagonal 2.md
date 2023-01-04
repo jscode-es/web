@@ -1,7 +1,7 @@
 ---
-objectID: 8161d34e-d0c6-4ff5-b080-2d752d325fbc
-subtitle: React y arquitectura hexágonal
-title: Desarrolla una aplicación con la mejores prácticas
+objectID: 8161d34e-d0c6-4ff5-b080-2d752d325fb3
+subtitle: React y arquitectura hexágonal 2
+title: Desarrolla una aplicación con la mejores prácticas 4
 date: '2022-07-26'
 description: Creamos una pequeña aplicación con los principio de la arquitectura hexágonal
 topic: me
@@ -13,7 +13,7 @@ tags:
 
 ### React y arquitectura hexágonal
 
-# Desarrolla una aplicación con la mejores prácticas
+# Desarrolla una aplicación con la mejores prácticas 4
 
 React es una librería de JavaScript desarrollada por Facebook que se ha vuelto extremadamente popular para el desarrollo de aplicaciones web y móviles. Una de las principales ventajas de React es que permite crear interfaces de usuario reutilizables y fáciles de mantener gracias a su enfoque basado en componentes.
 

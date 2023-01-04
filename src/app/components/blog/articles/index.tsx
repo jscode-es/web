@@ -2,7 +2,7 @@ import Link from 'next/link';
 import style from './style.module.css';
 import { faker } from '@faker-js/faker';
 
-export function Articles() {
+export function Articles({ data }: any) {
 	return (
 		<div className={style.container}>
 			<div className={style.top}>
@@ -18,30 +18,19 @@ export function Articles() {
 				</div>
 			</div>
 			<div className={style.content}>
-				<Link
-					href='#'
-					className={style.link}>
-					<div className={style.image}></div>
-					<span>{faker.lorem.words()}</span>
-					<h2>{faker.lorem.sentences(1)}</h2>
-					<p>{faker.lorem.sentences(2)}</p>
-				</Link>
-				<Link
-					href='#'
-					className={style.link}>
-					<div className={style.image}></div>
-					<span>{faker.lorem.words()}</span>
-					<h2>{faker.lorem.sentences(1)}</h2>
-					<p>{faker.lorem.sentences(2)}</p>
-				</Link>
-				<Link
-					href='#'
-					className={style.link}>
-					<div className={style.image}></div>
-					<span>{faker.lorem.words()}</span>
-					<h2>{faker.lorem.sentences(1)}</h2>
-					<p>{faker.lorem.sentences(2)}</p>
-				</Link>
+				{data.map((item: any, index: number) => {
+					return (
+						<Link
+							key={index}
+							href={`/${item.href}`}
+							className={style.link}>
+							<div className={style.image}></div>
+							<span>{item.subtitle}</span>
+							<h2>{item.title}</h2>
+							<p>{item.description}</p>
+						</Link>
+					);
+				})}
 			</div>
 		</div>
 	);
