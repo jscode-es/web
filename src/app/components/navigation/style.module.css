@@ -30,6 +30,12 @@
 	width: 100%;
 }
 
+.content > div:nth-child(2) {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
 .btns {
 	display: flex;
 	justify-content: flex-end;
