@@ -39,7 +39,7 @@ export async function getStaticProps({ params: { slug } }: any) {
 }
 
 export default function Blog({
-	frontmatter: { title, date, subtitle, description, cover_image },
+	frontmatter: { title, date, subtitle, description, cover_image, icon },
 	slug,
 	content,
 }: any) {
@@ -51,7 +51,7 @@ export default function Blog({
 	useEffect(() => {
 		hljs.highlightAll();
 		hljs.addPlugin(new CopyPasteCode());
-	}, []);
+	}, [slug]);
 
 	return (
 		<>
@@ -62,8 +62,10 @@ export default function Blog({
 						subtitle,
 						date,
 						cover_image,
+						description,
 						content: marked(content),
 						slug,
+						icon,
 					}}
 				/>
 			</Layout>
