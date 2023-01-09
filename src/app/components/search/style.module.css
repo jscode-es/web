@@ -29,7 +29,7 @@
 	font-size: 20px;
 	color: white;
 	outline: none;
-	text-align: center;
+	text-align: start;
 }
 
 .searchBox button {
@@ -53,13 +53,14 @@
 
 .result {
 	background: #1d192e;
-	position: relative;
+	position: absolute;
 	border-radius: 10px;
-	bottom: -10px;
 	opacity: 0;
 	visibility: hidden;
 	transition: 0.3s;
 	overflow: hidden;
+	top: 60px;
+	width: 100%;
 }
 
 .result.show {
@@ -71,6 +72,9 @@
 	padding: 20px;
 	display: block;
 	transition: 0.3s;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
 }
 
 .link:hover {
@@ -83,18 +87,27 @@
 	font-weight: bold;
 }
 
+.link > div:nth-child(1) {
+	height: 50px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
 .searchBox input::-webkit-input-placeholder {
 	/* Edge */
 	color: #5e5196;
+	text-align: center;
 }
 
 .searchBox input:-ms-input-placeholder {
 	/* Internet Explorer 10-11 */
 	color: #5e5196;
+	text-align: center;
 }
 
 .searchBox input::placeholder {
 	color: #5e5196;
+	text-align: center;
 }
 
 .icon {
