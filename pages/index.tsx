@@ -40,7 +40,7 @@ export default function Home({ listArticle }: any) {
 	return (
 		<>
 			<Layout {...head}>
-				<Headline data={listArticle.at(-1)} />
+				<Headline data={listArticle[0]} />
 				<Articles data={listArticle} />
 			</Layout>
 		</>

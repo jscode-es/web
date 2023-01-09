@@ -2,11 +2,12 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import hljs from 'highlight.js';
 
 import { Layout } from '../src/app/components/layout';
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Article } from '../src/app/components/blog/article';
+import { CopyPasteCode } from '../src/domain/copy_paste_code';
 
 export async function getStaticPaths() {
 	const files = fs.readdirSync(path.join('posts'));
@@ -24,11 +25,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-	const markdownWithMeta = fs.readFileSync(
-		path.join('posts', slug + '.md'),
-		'utf-8'
-	);
-
+	const filePath = path.join('posts', slug + '.md');
+	const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
 	const { data: frontmatter, content } = matter(markdownWithMeta);
 
 	return {
@@ -41,14 +39,19 @@ export async function getStaticProps({ params: { slug } }: any) {
 }
 
 export default function Blog({
-	frontmatter: { title, date, cover_image },
+	frontmatter: { title, date, subtitle, description, cover_image },
 	slug,
 	content,
 }: any) {
 	const head = {
 		title,
-		description: 'Tutoriales de programación',
+		description,
 	};
+
+	useEffect(() => {
+		hljs.highlightAll();
+		hljs.addPlugin(new CopyPasteCode());
+	}, []);
 
 	return (
 		<>
@@ -56,9 +59,11 @@ export default function Blog({
 				<Article
 					data={{
 						title,
+						subtitle,
 						date,
 						cover_image,
 						content: marked(content),
+						slug,
 					}}
 				/>
 			</Layout>

@@ -1,0 +1,89 @@
+.container {
+}
+
+.user_post {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.user_post > div:nth-child(1) {
+	background-color: #6366f1;
+	height: 35px;
+	width: 35px;
+	border-radius: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.user_post > div:nth-child(2) h5 {
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.user_post > div:nth-child(2) span {
+	font-weight: 500;
+	font-size: 14px;
+	color: #696a98;
+}
+
+.options {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.share {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+}
+
+.share button,
+.share a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	border: none;
+	background: transparent;
+	border-radius: 5px;
+	font-size: 25px;
+	color: #6f62ae;
+}
+
+.share button > svg,
+.share a > svg {
+	transition: 0.3s;
+	transform: scale(1);
+}
+
+.share button:hover > svg,
+.share a:hover > svg {
+	cursor: pointer;
+	transform: scale(1.2);
+	color: white;
+}
+
+.copy_btn {
+	position: relative;
+}
+
+.copy {
+	position: absolute;
+	background: #3f51b5;
+	top: -45px;
+	border-radius: 5px;
+	padding: 5px;
+	font-size: 10px;
+	color: white;
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.copy.show {
+	opacity: 1;
+}

@@ -5,7 +5,7 @@ export function Headline({ data }: any) {
 	return (
 		<div className={style.container}>
 			<span>{data.subtitle}</span>
-			<h1>{data.title}</h1>
+			<h1 dangerouslySetInnerHTML={{ __html: data.title }} />
 			<p>{data.description}</p>
 			<Link
 				href={`/${data.href}`}

@@ -19,7 +19,7 @@ export function Navigation() {
 					<Search />
 				</div>
 				<div className={style.btns}>
-					<div>buton</div>
+					<div></div>
 				</div>
 			</div>
 		</div>
