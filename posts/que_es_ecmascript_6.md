@@ -12,6 +12,7 @@ tags:
     - junior
     - senior
     - básico
+icon: javascript
 ---
 
 **ECMAScript 6**, también conocido como ECMAScript 2015, es la sexta versión del estándar de lenguaje de programación ECMAScript. Fue lanzado en junio de 2015 y es compatible con la mayoría de los navegadores modernos.
