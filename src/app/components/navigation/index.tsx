@@ -12,6 +12,7 @@ export function Navigation() {
 						<img
 							src='/jscode-logo.png'
 							className={style.logo}
+							alt='JSCode'
 						/>
 					</Link>
 				</div>
