@@ -1,13 +1,17 @@
 import style from './style.module.css';
 import { Publish } from '../publish';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 export function Article({
 	data: { title, subtitle, description, content, slug },
 }: any) {
 	const [src, setSrc] = useState(`/portrait/${slug}.png`);
+
+	useEffect(() => {
+		setSrc(`/portrait/${slug}.png`);
+	}, [slug]);
 
 	return (
 		<>
