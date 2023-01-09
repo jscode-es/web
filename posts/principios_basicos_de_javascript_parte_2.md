@@ -11,6 +11,7 @@ tags:
     - ecmascript 6
     - junior
     - básico
+icon: javascript
 ---
 
 En esta segunda parte, añadiremos otros aspectos del lenguaje.

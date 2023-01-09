@@ -11,6 +11,7 @@ tags:
     - ecmascript 6
     - junior
     - básico
+icon: javascript
 ---
 
 A día de hoy la mayoría de los lenguajes se componente de los mismo elementos. En JavaScript los principales elementos son los siguientes:
