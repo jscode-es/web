@@ -34,7 +34,7 @@ const create = async () => {
 		};
 
 		if (!fs.existsSync(dir)) {
-			fs.mkdirSync(dir);
+			fs.mkdirSync(dir, 777);
 		}
 
 		if (!fs.existsSync(file)) {
