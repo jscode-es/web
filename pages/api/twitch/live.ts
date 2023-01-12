@@ -5,11 +5,11 @@ import { Database } from '../../../utils/connection';
 type Data = Record<string, unknown>;
 
 const get = async (res: NextApiResponse<Data>) => {
-	const db = new Database({ table: 'jscode', collection: 'connection' });
+	const db = new Database();
 
 	await db.connect();
 
-	const [data] = await db.find({ name: 'twitch' });
+	const [data] = await db.getConnection({ name: 'twitch' });
 
 	/* delete data._id; */
 
