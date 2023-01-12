@@ -1,25 +1,48 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import fs, { promises as fsPromise } from 'fs';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import path from 'path';
+import { db } from 'object_mysql';
 
 type Data = Record<string, unknown>;
 
-const dir = path.join(process.cwd(), 'data');
-const file = path.join(dir, 'twitch.json');
+process.env.DB_HOST =
+	'test-speack-me-do-user-12145768-0.b.db.ondigitalocean.com';
+process.env.DB_USER = 'doadmin';
+process.env.DB_PASS = 'AVNS_bI25-jrWk3kbCgD5JjF';
+process.env.DB_TABLE = 'twitch';
+process.env.DB_PORT = '25060';
 
-const get = (res: NextApiResponse<Data>, data: Data) => {
-	return res.status(200).json(data || {});
+const get = async (res: NextApiResponse<Data>) => {
+	const { User } = await db();
+
+	const {
+		result: [user],
+	} = await User.get({
+		values: ['online'],
+		where: {
+			id: 1,
+		},
+	});
+
+	return res.status(200).json(user || {});
 };
 
-const put = (res: NextApiResponse<Data>, data: Data) => {
-	const newData = {
-		online: !data.online,
-	};
+const put = async (res: NextApiResponse<Data>) => {
+	const { User } = await db();
 
-	fsPromise.writeFile(file, JSON.stringify(newData), { mode: 777 });
+	const {
+		result: [user],
+	} = await User.get({
+		values: ['online'],
+		where: {
+			id: 1,
+		},
+	});
 
-	return res.status(200).json(newData || {});
+	const online = user.online === 1 ? 0 : 1;
+
+	await User.update(1, { online });
+
+	return res.status(200).json({ online } || {});
 };
 
 export default async function handler(
@@ -28,20 +51,8 @@ export default async function handler(
 ) {
 	const { method } = req;
 
-	if (!fs.existsSync(dir)) {
-		const data = JSON.stringify({
-			online: false,
-		});
-
-		await fsPromise.mkdir(dir, 777);
-		await fsPromise.writeFile(file, data, { mode: 777 });
-	}
-
-	const raw = await fsPromise.readFile(file);
-	const data = JSON.parse(raw as any);
-
-	if (method === 'GET') return get(res, data);
-	if (method === 'PUT') return put(res, data);
+	if (method === 'GET') return get(res);
+	if (method === 'PUT') return put(res);
 
 	res.status(404).json({});
 }
