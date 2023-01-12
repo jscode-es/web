@@ -21,14 +21,29 @@ const put = (res: NextApiResponse<Data>, data: Data) => {
 	return res.status(200).json(newData || {});
 };
 
-const create = () => {
-	if (!fs.existsSync(file)) {
+const create = async () => {
+	console.log({
+		file,
+		exist: fs.existsSync(file),
+	});
+
+	return new Promise((res) => {
 		const data = {
 			online: false,
 		};
 
-		fs.writeFileSync(file, JSON.stringify(data));
-	}
+		if (!fs.existsSync(file)) {
+			fs.writeFile(file, JSON.stringify(data), () => {
+				fs.chmod(file, 777, () => {
+					res(true);
+				});
+			});
+
+			return;
+		}
+
+		res(false);
+	});
 };
 
 export default function handler(
@@ -37,13 +52,13 @@ export default function handler(
 ) {
 	const { method } = req;
 
-	create();
+	create().then(() => {
+		const raw = fs.readFileSync(file);
+		const data = JSON.parse(raw as any);
 
-	const raw = fs.readFileSync(file);
-	const data = JSON.parse(raw as any);
+		if (method === 'GET') return get(res, data);
+		if (method === 'PUT') return put(res, data);
 
-	if (method === 'GET') return get(res, data);
-	if (method === 'PUT') return put(res, data);
-
-	res.status(404).json({});
+		res.status(404).json({});
+	});
 }
