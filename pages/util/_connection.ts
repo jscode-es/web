@@ -1,4 +1,5 @@
 /* import { MongoClient, ServerApiVersion } from 'mongodb'; */
+import mongoose from 'mongoose';
 
 export class Database {
 	private readonly uri =
@@ -8,6 +9,14 @@ export class Database {
 	private table: string = '';
 
 	constructor({ collection, table }: any) {
+		this.client = mongoose.connect(this.uri, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		} as any);
+
+		this.collection = collection;
+		this.table = table;
+
 		/* 	this.client = new MongoClient(this.uri, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,

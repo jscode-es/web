@@ -1,18 +1,19 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { Database } from '../../util/_connection';
 
 type Data = Record<string, unknown>;
 
 const get = async (res: NextApiResponse<Data>) => {
-	/* const db = new Database({ table: 'jscode', collection: 'connection' });
+	const db = new Database({ table: 'jscode', collection: 'connection' });
 
 	await db.connect();
 
 	const [data] = await db.find({ name: 'twitch' });
 
-	delete data._id;
+	/* delete data._id; */
 
-	return res.status(200).json(data || {}); */
+	return res.status(200).json(data || {});
 };
 
 const put = async (res: NextApiResponse<Data>) => {
@@ -38,7 +39,7 @@ export default async function handler(
 ) {
 	const { method } = req;
 
-	/* if (method === 'GET') return get(res); */
+	if (method === 'GET') return get(res);
 	/* if (method === 'PUT') return put(res); */
 
 	res.status(404).json({});
