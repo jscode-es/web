@@ -5,7 +5,6 @@ import path from 'path';
 
 type Data = Record<string, unknown>;
 
-const dir = path.resolve('data');
 const file = path.resolve('data/twitch.json');
 
 const get = (res: NextApiResponse<Data>, data: Data) => {
@@ -22,34 +21,21 @@ const put = (res: NextApiResponse<Data>, data: Data) => {
 	return res.status(200).json(newData || {});
 };
 
-const create = async () => {
-	console.log({
-		file,
-		exist: fs.existsSync(file),
-	});
-
-	return new Promise((res) => {
-		if (fs.existsSync(file)) {
-			fs.chmodSync(file, 777);
-		}
-
-		res(true);
-	});
-};
-
 export default function handler(
 	req: NextApiRequest,
 	res: NextApiResponse<Data>
 ) {
 	const { method } = req;
 
-	create().then(() => {
-		const raw = fs.readFileSync(file);
-		const data = JSON.parse(raw as any);
+	if (fs.existsSync(file)) {
+		fs.chmodSync(file, 777);
+	}
 
-		if (method === 'GET') return get(res, data);
-		if (method === 'PUT') return put(res, data);
+	const raw = fs.readFileSync(file);
+	const data = JSON.parse(raw as any);
 
-		res.status(404).json({});
-	});
+	if (method === 'GET') return get(res, data);
+	if (method === 'PUT') return put(res, data);
+
+	res.status(404).json({});
 }
