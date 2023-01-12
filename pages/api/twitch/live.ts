@@ -6,12 +6,9 @@ import path from 'path';
 type Data = Record<string, unknown>;
 
 const file = path.resolve('data/twitch.json');
-fs.chmod(file, 777, () => {
-	console.log('change');
-});
 
 const get = (res: NextApiResponse<Data>, data: Data) => {
-	return res.status(200).json(data);
+	return res.status(200).json(data || {});
 };
 
 const put = (res: NextApiResponse<Data>, data: Data) => {
@@ -21,7 +18,17 @@ const put = (res: NextApiResponse<Data>, data: Data) => {
 
 	fs.writeFileSync(file, JSON.stringify(newData));
 
-	return res.status(200).json(newData);
+	return res.status(200).json(newData || {});
+};
+
+const create = () => {
+	if (!fs.existsSync(file)) {
+		const data = {
+			online: false,
+		};
+
+		fs.writeFileSync(file, JSON.stringify(data));
+	}
 };
 
 export default function handler(
@@ -29,6 +36,8 @@ export default function handler(
 	res: NextApiResponse<Data>
 ) {
 	const { method } = req;
+
+	create();
 
 	const raw = fs.readFileSync(file);
 	const data = JSON.parse(raw as any);
