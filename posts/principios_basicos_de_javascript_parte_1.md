@@ -5,6 +5,7 @@ title: Principios básicos<br>de javascript ( Parte 1 )
 date: '2023-01-06'
 description: Aprende los principales conceptos de la programación en pocas lineas
 topic: me
+type: post
 toc: true
 tags:
     - javascript
@@ -105,5 +106,7 @@ for (let i = 0; i < 9; i++) {
 
 console.log(str); // Salida: "012345678"
 ```
+
+---
 
 Para que no se haga larga la lectura; en la parte dos continuamos con el resto de los aspectos del lenguaje.

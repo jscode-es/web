@@ -6,6 +6,7 @@ date: '2023-01-07'
 description: Aprende los principales conceptos de la programación en pocas lineas
 topic: me
 toc: true
+type: post
 tags:
     - javascript
     - ecmascript 6
@@ -80,5 +81,3 @@ const sentence_sanitized = sentence.replace(/\s+/g, ' ').trim();
 
 console.log(sentence_sanitized);
 ```
-
----

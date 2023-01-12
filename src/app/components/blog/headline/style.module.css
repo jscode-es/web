@@ -1,35 +1,106 @@
 .container {
-	text-align: center;
-	width: 800px;
-	margin-bottom: 100px;
+	width: 100%;
+	max-width: 1400px;
+	display: flex;
+	gap: 80px;
+	align-items: center;
+	padding: 0 40px;
+	margin-bottom: 90px;
 }
 
-.container > span {
-	color: #6366f1;
+.image {
+	background: #0c151e;
+	width: 1800px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 16/9;
+}
+
+.content > span {
+	color: #19f4ca;
 	font-size: 30px;
-	margin-bottom: 40px;
+	margin-bottom: 25px;
 	display: block;
 }
 
-.container > h1 {
-	font-size: 65px;
-	line-height: 80px;
-	margin-bottom: 30px;
-	color: #fffffff0;
+.content > h1 {
+	font-size: 70px;
+	line-height: 75px;
+	margin-bottom: 25px;
+	color: #d9dbdc;
 }
 
-.container > p {
+.content > p {
 	font-size: 20px;
-	line-height: 40px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	color: #7162b6;
+	line-height: 30px;
 }
 
 .btn {
-	background: #4f46e5;
-	font-size: 20px;
-	padding: 10px 30px;
+	background: #19f4ca;
+	display: inline-flex;
+	padding: 10px 20px;
 	border-radius: 10px;
-	display: inline-block;
-	color: #edefff;
+	color: #030c15;
+	font-size: 20px;
+	margin: 0;
+}
+
+.coming_soon {
+	background: #19f4ca;
+	display: inline-flex;
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: #030c15;
+	font-size: 20px;
+	margin: 0;
+	opacity: 0.4;
+	cursor: no-drop;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.container {
+		flex-direction: column;
+	}
+
+	.image {
+		width: 100%;
+	}
+}
+
+/* 
+	Device = Tablets, Ipads (landscape)
+	Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* 
+	Device = Low Resolution Tablets, Mobiles (Landscape)
+	Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.image {
+		display: none !important;
+	}
+}
+
+/* 
+	Device = Most of the Smartphones Mobiles (Portrait)
+	Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 0px) and (max-width: 480px) {
+	.image {
+		display: none !important;
+	}
+
+	.content > h1 {
+		font-size: 11vw;
+		line-height: 12vw;
+	}
 }

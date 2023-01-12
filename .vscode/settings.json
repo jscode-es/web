@@ -4,17 +4,21 @@
 		"destructuración",
 		"ecmascript",
 		"infrastruture",
+		"Ipads",
+		"jscode",
 		"Kopieren",
 		"kopiert",
 		"Kopiert",
+		"nextjs",
 		"nuevo",
 		"presse",
+		"Youtube",
 		"Zwischenablage",
 		"буфер",
 		"Копировать",
 		"обмена",
 		"Скопировано"
 	],
-	"cSpell.language": "en,es",
-	"cSpell.ignoreWords": ["facebook", "frontmatter", "hljs", "linkedin"]
+	"cSpell.language": "en,es,es-ES",
+	"cSpell.ignoreWords": ["facebook", "frontmatter", "hljs", "img", "linkedin"]
 }

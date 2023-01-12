@@ -11,7 +11,8 @@ const social = {
 		icon: 'FaFacebookSquare',
 	},
 	linkedin: {
-		url: 'https://www.linkedin.com/shareArticle?mini=true&url={0}&title={1}&summary={1}&source={0}',
+		//url: 'https://www.linkedin.com/shareArticle?mini=true&url={0}&title={1}&summary={1}&source={0}',
+		url: 'https://www.linkedin.com/sharing/share-offsite/?url={0}',
 		icon: 'FaLinkedin',
 	},
 };

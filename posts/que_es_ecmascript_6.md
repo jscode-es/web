@@ -6,6 +6,7 @@ date: '2023-01-05'
 description: Novedades que nos ofrece el nuevo estándar de programación
 topic: me
 toc: true
+type: post
 tags:
     - javascript
     - ecmascript 6

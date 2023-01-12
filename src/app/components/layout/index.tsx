@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Navigation } from '../navigation';
-import { Newsletter } from '../newsletter';
+/*
+import { Newsletter } from '../newsletter'; */
 import style from './style.module.css';
 
 export function Layout({ children, title, description }: any) {
@@ -26,11 +27,13 @@ export function Layout({ children, title, description }: any) {
 				<main className={style.main}>
 					<Navigation />
 					<div className={style.content}>{children}</div>
+					{/* 
+					<div className={style.content}>{children}</div>
 					<div className={style.footer}>
 						<div></div>
 						<Newsletter />
 						<div></div>
-					</div>
+					</div> */}
 				</main>
 			</div>
 		</>

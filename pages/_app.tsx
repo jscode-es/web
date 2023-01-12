@@ -1,6 +1,7 @@
-import '../styles/globals.css';
 import 'highlight.js/styles/github.css';
 import type { AppProps } from 'next/app';
+import '../styles/fonts.css';
+import '../styles/globals.css';
 
 import splitbee from '@splitbee/web';
 

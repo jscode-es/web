@@ -1,0 +1,41 @@
+.container {
+	background: #05111c;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 80px;
+}
+
+.content {
+	display: flex;
+	gap: 40px;
+	padding: 40px;
+	width: 100%;
+	max-width: 1400px;
+	color: #38526b;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	font-size: 20px;
+	width: 355px;
+	display: block;
+}
+
+.icons {
+	font-size: 40px;
+	display: flex;
+	gap: 30px;
+}
+
+.icons a {
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.icons a:hover {
+	color: white;
+
+	transform: scale(1.2);
+}

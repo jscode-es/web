@@ -1,12 +1,12 @@
 import fs from 'fs';
-import path from 'path';
 import matter from 'gray-matter';
-import { marked } from 'marked';
 import hljs from 'highlight.js';
+import { marked } from 'marked';
+import path from 'path';
 
-import { Layout } from '../src/app/components/layout';
 import { useEffect } from 'react';
 import { Article } from '../src/app/components/blog/article';
+import { Layout } from '../src/app/components/layout';
 import { CopyPasteCode } from '../src/domain/copy_paste_code';
 
 export async function getStaticPaths() {

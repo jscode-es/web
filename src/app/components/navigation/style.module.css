@@ -2,8 +2,9 @@
 	position: fixed;
 	width: 100%;
 	left: 0;
-	padding: 40px 200px;
 	z-index: 2;
+	display: flex;
+	justify-content: center;
 }
 
 .logo {
@@ -24,6 +25,11 @@
 	justify-content: space-between;
 	z-index: 1;
 	position: relative;
+	gap: 30px;
+	padding: 30px 20px;
+	align-items: center;
+	max-width: 1400px;
+	width: 100%;
 }
 
 .content > div {
@@ -36,7 +42,62 @@
 	justify-content: center;
 }
 
-.btns {
+.group {
 	display: flex;
 	justify-content: flex-end;
+	gap: 10px;
+}
+
+.group a {
+	height: 40px;
+	width: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	cursor: pointer;
+	transition: 0.3s;
+	color: #19f4ca82;
+}
+
+.group a:hover {
+	transform: scale(1.1);
+	color: #19f4cae8;
+}
+
+.hide_mobile {
+	display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* 
+	Device = Tablets, Ipads (landscape)
+	Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* 
+	Device = Low Resolution Tablets, Mobiles (Landscape)
+	Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+	.hide_mobile {
+		display: none !important;
+	}
+}
+
+/* 
+	Device = Most of the Smartphones Mobiles (Portrait)
+	Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 0px) and (max-width: 480px) {
+	.hide_mobile {
+		display: none !important;
+	}
 }
