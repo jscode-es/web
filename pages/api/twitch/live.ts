@@ -5,6 +5,7 @@ import path from 'path';
 
 type Data = Record<string, unknown>;
 
+const dir = path.resolve('data');
 const file = path.resolve('data/twitch.json');
 
 const get = (res: NextApiResponse<Data>, data: Data) => {
@@ -31,6 +32,10 @@ const create = async () => {
 		const data = {
 			online: false,
 		};
+
+		if (!fs.existsSync(dir)) {
+			fs.mkdirSync(dir);
+		}
 
 		if (!fs.existsSync(file)) {
 			fs.writeFile(file, JSON.stringify(data), () => {
