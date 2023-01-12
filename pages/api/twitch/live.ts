@@ -6,6 +6,9 @@ import path from 'path';
 type Data = Record<string, unknown>;
 
 const file = path.resolve('data/twitch.json');
+fs.chmod(file, 777, () => {
+	console.log('change');
+});
 
 const get = (res: NextApiResponse<Data>, data: Data) => {
 	return res.status(200).json(data);
