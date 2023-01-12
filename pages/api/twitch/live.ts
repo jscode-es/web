@@ -29,25 +29,11 @@ const create = async () => {
 	});
 
 	return new Promise((res) => {
-		const data = {
-			online: false,
-		};
-
-		if (!fs.existsSync(dir)) {
-			fs.mkdirSync(dir, 777);
+		if (fs.existsSync(file)) {
+			fs.chmodSync(file, 777);
 		}
 
-		if (!fs.existsSync(file)) {
-			fs.writeFile(file, JSON.stringify(data), () => {
-				fs.chmod(file, 777, () => {
-					res(true);
-				});
-			});
-
-			return;
-		}
-
-		res(false);
+		res(true);
 	});
 };
 
