@@ -27,13 +27,38 @@ export function Layout({ children, title, description }: any) {
 				<main className={style.main}>
 					<Navigation />
 					<div className={style.content}>{children}</div>
-					{/* 
-					<div className={style.content}>{children}</div>
 					<div className={style.footer}>
 						<div></div>
-						<Newsletter />
+						<div className={style.social}>
+							<a href=''>Contacto</a>
+							<a
+								href='https://www.twitch.tv/jscode_'
+								target='_blank'
+								rel='noreferrer'>
+								Twitch
+							</a>
+							<a
+								href='https://www.youtube.com/channel/UCXLcSZzqpRzQ-FplONzCrMw'
+								target='_blank'
+								rel='noreferrer'>
+								Youtube
+							</a>
+							<a
+								href='https://www.instagram.com/jscode_es/'
+								target='_blank'
+								rel='noreferrer'>
+								Instagram
+							</a>
+							<a
+								href='https://github.com/jscode-es'
+								target='_blank'
+								rel='noreferrer'>
+								Github
+							</a>
+						</div>
+						{/* <Newsletter /> */}
 						<div></div>
-					</div> */}
+					</div>
 				</main>
 			</div>
 		</>
