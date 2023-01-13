@@ -9,9 +9,12 @@ const get = async (res: NextApiResponse<Data>) => {
 
 	const [data] = await db.find({ name: 'twitch' });
 
-	delete data._id;
+	const response = {
+		name: data.name,
+		online: data.online,
+	};
 
-	return res.status(200).json(data || {});
+	return res.status(200).json(response || {});
 };
 
 const put = async (res: NextApiResponse<Data>) => {

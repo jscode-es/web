@@ -1,4 +1,4 @@
-import { Filter, MongoClient } from 'mongodb';
+import { MongoClient, MongoClientOptions } from 'mongodb';
 
 export class Database {
 	private readonly uri =
@@ -17,7 +17,7 @@ export class Database {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			/* serverApi: ServerApiVersion.v1, */
-		});
+		} as MongoClientOptions);
 
 		return client;
 	}
@@ -33,7 +33,7 @@ export class Database {
 		return result;
 	}
 
-	async update(_id: Filter<Document>, params: Record<string, unknown> = {}) {
+	async update(_id: any, params: Record<string, unknown> = {}) {
 		const client = this.client();
 		const db = client.db(this.table);
 		const table = db.collection(this.collection);
