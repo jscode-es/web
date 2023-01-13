@@ -1,7 +1,7 @@
 ---
 objectID: be319731-dd02-409b-95d7-f3a2864c0ce1
 subtitle: Conceptos iniciales
-title: Principios básicos<br>de javascript ( Parte 1 )
+title: Principios básicos de javascript<br>( Parte 1 )
 date: '2023-01-06'
 description: Aprende los principales conceptos de la programación en pocas lineas
 topic: me

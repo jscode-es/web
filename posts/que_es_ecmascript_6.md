@@ -1,7 +1,7 @@
 ---
 objectID: 13ee57ef-dd3d-42ab-be7f-2eb4f31a1f3d
 subtitle: Novedades en javascript
-title: ¿ Que es ecmascript 6 ?
+title: ¿ Que es ecmascript 6 y que novedades tiene?
 date: '2023-01-05'
 description: Novedades que nos ofrece el nuevo estándar de programación
 topic: me
