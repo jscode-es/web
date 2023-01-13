@@ -1,7 +1,7 @@
 import { Twitch } from '../../domain/twitch';
 
 export class TwitchRepository implements Twitch {
-	private readonly selfApi = `http://localhost:3000/api/twitch/live`;
+	private readonly selfApi = `${location.origin}/api/twitch/live`;
 	private readonly iframeSrc =
 		'https://player.twitch.tv/?channel=jscode_&parent=${document.location.hostname}';
 
