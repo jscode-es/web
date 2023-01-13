@@ -68,7 +68,7 @@ export function PublishNetwork({ client }: any) {
 		const url = stringFormat((social as any)[client].url, [href, content]);
 
 		setHref(new URL(url).href);
-	}, []);
+	}, [client]);
 
 	return (
 		<button

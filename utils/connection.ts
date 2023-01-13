@@ -38,7 +38,7 @@ export class Database {
 		const db = client.db(this.table);
 		const table = db.collection(this.collection);
 
-		table.findOneAndUpdate({ _id }, { $set: params });
+		await table.findOneAndUpdate({ _id }, { $set: params });
 
 		client.close();
 
