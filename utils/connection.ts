@@ -1,47 +1,47 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { Filter, MongoClient } from 'mongodb';
 
 export class Database {
 	private readonly uri =
 		'mongodb+srv://jscode:$3Guridad123@cluster0.czfszky.mongodb.net/?retryWrites=true&w=majority';
-	private client: any = null;
+
 	private collection: string = '';
 	private table: string = '';
 
 	constructor({ collection, table }: any) {
-		this.client = new MongoClient(this.uri, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-			serverApi: ServerApiVersion.v1,
-		} as any);
-
 		this.collection = collection;
 		this.table = table;
 	}
 
-	async connect() {
-		this.client.connect(async (err: any) => {
-			Promise.resolve(true);
+	client() {
+		const client = new MongoClient(this.uri, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+			/* serverApi: ServerApiVersion.v1, */
 		});
-		/*  try {
-           
-            const db: Db = client.db('<dbname>');
-            const users = db.collection('users');
-            const result = await users.find({}).toArray();
-            console.log(result);
-          } catch (error) {
-            console.log(error);
-          } finally {
-            await client.close();
-          } */
+
+		return client;
 	}
 
 	async find(params: Record<string, unknown> = {}) {
-		const db = this.client.db(this.table);
+		const client = this.client();
+		const db = client.db(this.table);
 		const table = db.collection(this.collection);
 		const result = await table.find(params).toArray();
 
-		this.client.close();
+		client.close();
 
 		return result;
+	}
+
+	async update(_id: Filter<Document>, params: Record<string, unknown> = {}) {
+		const client = this.client();
+		const db = client.db(this.table);
+		const table = db.collection(this.collection);
+
+		table.findOneAndUpdate({ _id }, { $set: params });
+
+		client.close();
+
+		return [];
 	}
 }

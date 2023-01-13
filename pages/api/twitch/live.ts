@@ -7,30 +7,21 @@ type Data = Record<string, unknown>;
 const get = async (res: NextApiResponse<Data>) => {
 	const db = new Database({ table: 'jscode', collection: 'connection' });
 
-	await db.connect();
-
 	const [data] = await db.find({ name: 'twitch' });
 
-	/* delete data._id; */
+	delete data._id;
 
 	return res.status(200).json(data || {});
 };
 
 const put = async (res: NextApiResponse<Data>) => {
-	/* 	const {
-		result: [user],
-	} = await User.get({
-		values: ['online'],
-		where: {
-			id: 1,
-		},
-	});
+	const db = new Database({ table: 'jscode', collection: 'connection' });
 
-	const online = user.online === 1 ? 0 : 1;
+	const [data] = await db.find({ name: 'twitch' });
 
-	await User.update(1, { online });
+	await db.update(data._id, { online: !data.online });
 
-	return res.status(200).json({ online } || {}); */
+	return res.status(200).json({});
 };
 
 export default async function handler(
@@ -40,7 +31,7 @@ export default async function handler(
 	const { method } = req;
 
 	if (method === 'GET') return get(res);
-	/* if (method === 'PUT') return put(res); */
+	if (method === 'PUT') return put(res);
 
 	res.status(404).json({});
 }
