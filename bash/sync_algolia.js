@@ -19,7 +19,7 @@ function addIndexToAlgolia() {
 
 		let { data } = matter(markdownWithMeta);
 
-		data.title = data.title.replace
+		data.title = data.title
 			.replace(/<br>/g, ' ')
 			.replace(/\s+/g, ' ')
 			.trim();
