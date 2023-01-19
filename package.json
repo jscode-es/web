@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"prestart": "node ./bash/sync_algolia.js",
+		"prebuild": "node ./bash/sync_algolia.js",
 		"export": "npm run build && next export -o _static"
 	},
 	"dependencies": {

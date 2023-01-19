@@ -19,7 +19,10 @@ function addIndexToAlgolia() {
 
 		let { data } = matter(markdownWithMeta);
 
-		data.title = data.title.replace('<br>', ' ');
+		data.title = data.title.replace
+			.replace(/<br>/g, ' ')
+			.replace(/\s+/g, ' ')
+			.trim();
 		data.href = item.replace('.md', '');
 
 		return data;
