@@ -39,13 +39,22 @@ export async function getStaticProps({ params: { slug } }: any) {
 }
 
 export default function Blog({
-	frontmatter: { title, date, subtitle, description, cover_image, icon },
+	frontmatter: {
+		title,
+		date,
+		subtitle,
+		description,
+		cover_image,
+		icon,
+		tags,
+	},
 	slug,
 	content,
 }: any) {
 	const head = {
 		title,
 		description,
+		tags,
 	};
 
 	useEffect(() => {
@@ -60,6 +69,7 @@ export default function Blog({
 					data={{
 						title,
 						subtitle,
+						tags,
 						date,
 						cover_image,
 						description,

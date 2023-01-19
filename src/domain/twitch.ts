@@ -1,3 +1,3 @@
 export interface Twitch {
-	isLive(): Promise<boolean>;
+	isLive(host: string): Promise<boolean>;
 }

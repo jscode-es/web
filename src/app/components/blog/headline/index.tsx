@@ -5,7 +5,7 @@ import style from './style.module.css';
 
 export function Headline({ data, coming_soon }: any) {
 	const [src, setSrc] = useState(`/portrait/${data.href}.png`);
-	console.log(data);
+
 	return (
 		<div className={style.container}>
 			<div className={style.image}>

@@ -7,7 +7,33 @@ import { useState } from 'react';
 // https://wcoder.github.io/share-buttons/
 // https://github.dev/wcoder/share-buttons
 
-export function Publish({ data }: any) {
+const formatDate = (date_post: string) => {
+	const date = new Date(date_post);
+	const monthNames = [
+		'Ene',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Ago',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec',
+	];
+
+	const day = date.getDate();
+	const month = date.getMonth();
+	const year = date.getFullYear();
+
+	const format = `${day} ${monthNames[month]} ${year}`;
+
+	return format;
+};
+
+export function Publish({ date }: any) {
 	const [styleCopyInfo, setStyleCopyInfo] = useState('');
 
 	const copyLink = () => {
@@ -29,7 +55,7 @@ export function Publish({ data }: any) {
 					<div>SG</div>
 					<div>
 						<h5>Sergio González</h5>
-						<span>20 Jan 2022</span>
+						<span>{formatDate(date)}</span>
 					</div>
 				</div>
 			</div>

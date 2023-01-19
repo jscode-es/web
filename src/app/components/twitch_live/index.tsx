@@ -1,17 +1,34 @@
 import style from './style.module.css';
 
 import { SiTwitch } from 'react-icons/si';
+import { IoClose } from 'react-icons/io5';
+import { useEffect, useState } from 'react';
 
-export function TwitchLive() {
+export function TwitchLive({ online }: { online: boolean }) {
+	const [showContainer, setShowContainer] = useState('');
+
+	const close = () => setShowContainer('');
+
+	useEffect(() => {
+		setShowContainer(online ? style.show : '');
+	}, [online]);
+
 	return (
-		<div className={style.container}>
+		<div className={`${style.container} ${showContainer}`}>
 			<div className={style.content}>
+				<button
+					className={style.close}
+					onClick={close}>
+					<IoClose />
+				</button>
 				<div className={style.video}>
-					<iframe
-						src='https://player.twitch.tv/?channel=jscode_&amp;parent=jscode.es'
-						width='320'
-						height='200'
-						scrolling='no'></iframe>
+					{online && (
+						<iframe
+							src='https://player.twitch.tv/?channel=jscode_&parent=jscode.es'
+							width='320'
+							height='200'
+							scrolling='no'></iframe>
+					)}
 				</div>
 				<div className={style.info}>
 					<span>En directo</span>
@@ -30,17 +47,6 @@ export function TwitchLive() {
 					</a>
 				</div>
 			</div>
-			{/* <div className={style.content}>
-				<span>Is live</span>
-				<h1 dangerouslySetInnerHTML={{ __html: '' }} />
-				<p>hoalsa</p>
-
-				<Link
-					href='https://www.twitch.tv/midudev'
-					className={style.btn}>
-					<span>Ir al artículo</span>
-				</Link>
-			</div> */}
 		</div>
 	);
 }

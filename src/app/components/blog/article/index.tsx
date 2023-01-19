@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 export function Article({
-	data: { title, subtitle, description, content, slug },
+	data: { title, subtitle, description, content, slug, tags, date },
 }: any) {
 	const [src, setSrc] = useState(`/portrait/${slug}.png`);
 
@@ -22,7 +22,11 @@ export function Article({
 				/>
 				<meta
 					property='og:title'
-					content={title.replace('<br>', ' ')}
+					content={title.replace(/<br>/g, ' ')}
+				/>
+				<meta
+					name='keywords'
+					content={tags.join(', ')}
 				/>
 				<meta
 					property='og:description'
@@ -56,12 +60,12 @@ export function Article({
 						/>
 					</div>
 				</div>
-				<Publish />
+				<Publish date={date} />
 				<div
 					className={style.content}
 					dangerouslySetInnerHTML={{ __html: content }}
 				/>
-				<Publish />
+				<Publish date={date} />
 			</div>
 		</>
 	);
