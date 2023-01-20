@@ -19,8 +19,8 @@ export function Layout({ children, title, description }: any) {
 		if (!hostSocket) return;
 		const socket = io(String(hostSocket));
 
-		socket.on('twitch', ({ online }) => {
-			console.log('LLEGA?');
+		socket.on('twitch_status', ({ online }) => {
+			console.log('LLEGA?', { online });
 			setIsLive(online);
 		});
 
