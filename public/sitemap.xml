@@ -1,25 +1,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://jscode.es/</loc>
+		<lastmod>2023-01-20T12:48:46.633Z</lastmod>
+		<priority>1.00</priority>
+	</url>
         <url>
             <loc>https://jscode.es/crear_app_note_en_react_parte_1</loc>
-            <lastmod>Thu Jan 12 2023 17:48:51 GMT+0100 (hora estándar de Europa central)</lastmod>
+            <lastmod>2023-01-12T16:48:51.985Z</lastmod>
+			<priority>0.80</priority>
         </url>
         <url>
             <loc>https://jscode.es/crear_app_note_en_react_parte_2</loc>
-            <lastmod>Thu Jan 19 2023 21:26:48 GMT+0100 (hora estándar de Europa central)</lastmod>
+            <lastmod>2023-01-19T20:26:48.813Z</lastmod>
+			<priority>0.80</priority>
         </url>
         <url>
             <loc>https://jscode.es/instalacion_nginx</loc>
-            <lastmod>Thu Jan 19 2023 22:00:07 GMT+0100 (hora estándar de Europa central)</lastmod>
+            <lastmod>2023-01-19T21:00:07.468Z</lastmod>
+			<priority>0.80</priority>
         </url>
         <url>
             <loc>https://jscode.es/principios_basicos_de_javascript_parte_1</loc>
-            <lastmod>Thu Jan 19 2023 21:35:37 GMT+0100 (hora estándar de Europa central)</lastmod>
+            <lastmod>2023-01-19T20:35:37.835Z</lastmod>
+			<priority>0.80</priority>
         </url>
         <url>
             <loc>https://jscode.es/principios_basicos_de_javascript_parte_2</loc>
-            <lastmod>Fri Jan 13 2023 10:59:08 GMT+0100 (hora estándar de Europa central)</lastmod>
+            <lastmod>2023-01-13T09:59:08.910Z</lastmod>
+			<priority>0.80</priority>
         </url>
         <url>
             <loc>https://jscode.es/que_es_ecmascript_6</loc>
-            <lastmod>Fri Jan 13 2023 10:56:17 GMT+0100 (hora estándar de Europa central)</lastmod>
+            <lastmod>2023-01-13T09:56:17.781Z</lastmod>
+			<priority>0.80</priority>
         </url></urlset>

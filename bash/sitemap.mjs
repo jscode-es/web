@@ -12,7 +12,12 @@ const generate = async () => {
 	const postPath = path.join(process.cwd(), 'posts');
 
 	const baseUrl = 'https://jscode.es';
-	let urls = '';
+	let urls = `
+	<url>
+		<loc>https://jscode.es/</loc>
+		<lastmod>${new Date(Date.now()).toISOString()}</lastmod>
+		<priority>1.00</priority>
+	</url>`;
 
 	const files = await fs.readdir(postPath);
 
@@ -24,7 +29,8 @@ const generate = async () => {
 		urls += `
         <url>
             <loc>${baseUrl}/${file.replace('.md', '')}</loc>
-            <lastmod>${stats.mtime}</lastmod>
+            <lastmod>${new Date(stats.mtime).toISOString()}</lastmod>
+			<priority>0.80</priority>
         </url>`;
 	}
 
