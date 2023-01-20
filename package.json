@@ -8,6 +8,7 @@
 		"start": "next start",
 		"lint": "next lint",
 		"prebuild": "node ./bash/sync_algolia.js",
+		"sitemap": "node ./bash/sitemap.mjs",
 		"export": "npm run build && next export -o _static"
 	},
 	"dependencies": {
