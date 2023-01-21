@@ -19,7 +19,7 @@ En esta segunda parte, añadiremos otros aspectos del lenguaje.
 
 ## Funciones
 
-Son fragmentos de código reutilizables que podemos ejecutar en cualquier momento.
+Son fragmentos de código reusable que podemos ejecutar en cualquier momento.
 
 ```js
 function getConcatFullName(name, surname) {
