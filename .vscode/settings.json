@@ -19,5 +19,28 @@
 		"обмена",
 		"Скопировано"
 	],
-	"cSpell.ignoreWords": ["facebook", "frontmatter", "hljs", "img", "linkedin"]
+	"cSpell.ignoreWords": [
+		"automatic",
+		"autorestart",
+		"crash",
+		"ecosystem",
+		"exec",
+		"facebook",
+		"frontmatter",
+		"hljs",
+		"icon",
+		"img",
+		"linkedin",
+		"memory",
+		"merged",
+		"mode",
+		"production",
+		"sent",
+		"shell",
+		"subtitle",
+		"than",
+		"will"
+	],
+	"cSpell.language": "es-ES",
+	"cSpell.enableFiletypes": ["!asciidoc"]
 }
