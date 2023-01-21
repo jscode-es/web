@@ -1,7 +1,7 @@
 import { Twitch } from '../../domain/twitch';
 
 export class TwitchRepository implements Twitch {
-	private readonly pathname = `/api/twitch/live`;
+	private readonly pathname = `/twitch/status`;
 	private readonly iframeSrc =
 		'https://player.twitch.tv/?channel=jscode_&parent=jscode.es';
 
