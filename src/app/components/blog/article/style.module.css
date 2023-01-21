@@ -57,6 +57,16 @@
 	color: #ffffff;
 }
 
+.content a {
+	color: #9464f5;
+	text-decoration: underline;
+	transition: 0.3s;
+}
+
+.content a:hover {
+	color: #74d8ff;
+}
+
 .portrait {
 	background: #1d192e;
 	width: 100%;
