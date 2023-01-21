@@ -4,44 +4,31 @@ import { Navigation } from '../navigation';
 import { TwitchLive } from '../twitch_live';
 
 import { TwitchRepository } from '../../../infrastruture/repository/twitch';
-import { io } from 'socket.io-client';
 /*
 import { Newsletter } from '../newsletter'; */
 import style from './style.module.css';
+import { useSocket } from '../../context/socket';
 
 const twitch = new TwitchRepository();
 
 export function Layout({ children, title, description }: any) {
 	const [isLive, setIsLive] = useState(false);
-	const [hostSocket, setHostSocket] = useState(false);
-
-	useMemo(() => {
-		if (!hostSocket) return;
-		const socket = io(String(hostSocket));
-
-		socket.on('twitch_status', ({ online }) => {
-			console.log('LLEGA?', { online });
-			setIsLive(online);
-		});
-
-		return socket;
-	}, [hostSocket]);
+	const { socket } = useSocket();
 
 	useEffect(() => {
-		twitch.isLive(location.origin).then(setIsLive);
+		twitch.isLive(String(process.env.NEXT_PUBLIC_SOCKET)).then(setIsLive);
 
-		setHostSocket((global as any).HOST_SOCKET);
+		if (!socket) return;
 
-		/* server.on('twitch', ({ online }) => {
+		socket.on('twitch_status', ({ online }: { online: boolean }) => {
 			console.log('LLEGA?');
 			setIsLive(online);
 		});
 
 		return () => {
-			server.off('twitch');
-			server.disconnect();
-		}; */
-	}, []);
+			socket.off('twitch_status');
+		};
+	}, [socket]);
 
 	return (
 		<>
