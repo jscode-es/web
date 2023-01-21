@@ -44,7 +44,7 @@ sudo ufw app list
 
 ---
 
-Eso te dará una salida similiar
+Eso te dará una salida similar
 
 ```shell
 Available applications:
