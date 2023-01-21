@@ -8,8 +8,13 @@ import { TwitchRepository } from '../../../infrastruture/repository/twitch';
 import { Newsletter } from '../newsletter'; */
 import style from './style.module.css';
 import { useSocket } from '../../context/socket';
+import { LinkTo } from '../link';
 
 const twitch = new TwitchRepository();
+
+interface twitchStatus {
+	online: boolean;
+}
 
 export function Layout({ children, title, description }: any) {
 	const [isLive, setIsLive] = useState(false);
@@ -20,10 +25,9 @@ export function Layout({ children, title, description }: any) {
 
 		if (!socket) return;
 
-		socket.on('twitch_status', ({ online }: { online: boolean }) => {
-			console.log('LLEGA?');
-			setIsLive(online);
-		});
+		socket.on('twitch_status', ({ online }: twitchStatus) =>
+			setIsLive(online)
+		);
 
 		return () => {
 			socket.off('twitch_status');
@@ -57,30 +61,22 @@ export function Layout({ children, title, description }: any) {
 						<div></div>
 						<div className={style.social}>
 							<a href=''>Contacto</a>
-							<a
+							<LinkTo
 								href='https://www.twitch.tv/jscode_'
-								target='_blank'
-								rel='noreferrer'>
-								Twitch
-							</a>
-							<a
+								text='Twitch'
+							/>
+							<LinkTo
 								href='https://www.youtube.com/channel/UCXLcSZzqpRzQ-FplONzCrMw'
-								target='_blank'
-								rel='noreferrer'>
-								Youtube
-							</a>
-							<a
+								text='Twitch'
+							/>
+							<LinkTo
 								href='https://www.instagram.com/jscode_es/'
-								target='_blank'
-								rel='noreferrer'>
-								Instagram
-							</a>
-							<a
+								text='Instagram'
+							/>
+							<LinkTo
 								href='https://github.com/jscode-es'
-								target='_blank'
-								rel='noreferrer'>
-								Github
-							</a>
+								text='Github'
+							/>
 						</div>
 						{/* <Newsletter /> */}
 						<div></div>
