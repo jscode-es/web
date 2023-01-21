@@ -60,7 +60,10 @@ export function Layout({ children, title, description }: any) {
 					<div className={style.footer}>
 						<div></div>
 						<div className={style.social}>
-							<a href=''>Contacto</a>
+							<LinkTo
+								href='mailto:sgonzalez@jscode.es?subject=Estoy%20interesado%20de%20su%20conocimientos%20en%20NodeJS&body=%0D%0A%0D%0AEste%20mensaje%20se%20redact%C3%B3%20desde%20JSCode.es'
+								text='Contacto'
+							/>
 							<LinkTo
 								href='https://www.twitch.tv/jscode_'
 								text='Twitch'
