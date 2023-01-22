@@ -1,14 +1,14 @@
-import { ItemArticle } from './item';
+import { ItemCourse } from './item';
 import style from './style.module.css';
 
-export function Articles({ data }: any) {
+export function Courses({ data }: any) {
 	return (
 		<div className={style.container}>
 			<div className={style.content}>
 				<div className={style.top}>
 					<div>
-						<h1>Últimos artículos</h1>
-						<p>Ponte al día sobre NodeJS</p>
+						<h1>Últimos cursos</h1>
+						<p>Conviértete de junior a senior con este contenido</p>
 					</div>
 					<div>
 						{/* <button className={style.btn}>Mostrar todo</button> */}
@@ -17,9 +17,9 @@ export function Articles({ data }: any) {
 				<div className={style.list}>
 					{data.map((item: any) => {
 						return (
-							<ItemArticle
+							<ItemCourse
 								item={item}
-								key={item.href}
+								key={item.objectID}
 							/>
 						);
 					})}

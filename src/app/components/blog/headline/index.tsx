@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import style from './style.module.css';
 
-export function Headline({ data, coming_soon }: any) {
+export function Headline({ data, coming_soon = true }: any) {
 	const [src, setSrc] = useState(`/portrait/${data.href}.png`);
 
 	return (
