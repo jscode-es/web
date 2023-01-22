@@ -98,6 +98,9 @@
 	padding: 5px 15px !important;
 	margin: 0 !important;
 	position: absolute;
-	top: 0;
+	top: 32px;
 	transform: rotate(39deg);
+	right: -38px;
+	width: 200px;
+	text-align: center;
 }
