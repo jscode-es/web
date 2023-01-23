@@ -4,7 +4,7 @@ title: Introducción
 subtitle: Como iniciar el proyecto
 date: '2023-01-11'
 position: 1
-video: https://www.w3schools.com/html/mov_bbb.mp4
+video: https://core.jscode.es/video?ref=create_app_note_en_react-introduccion
 video_size: 28min
 tags:
     - senior

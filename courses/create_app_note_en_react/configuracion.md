@@ -4,7 +4,7 @@ title: Configuración
 subtitle: Estructura de carpetas y configuración
 date: '2023-01-11'
 position: 2
-video: https://www.w3schools.com/html/mov_bbb.mp4
+video: https://core.jscode.es/video?ref=create_app_note_en_react-configuracion
 video_size: 28min
 tags:
     - senior
