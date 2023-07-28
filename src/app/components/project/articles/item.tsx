@@ -8,7 +8,7 @@ export function ItemProject({ item }: any) {
 
 	return (
 		<Link
-			href={`/project/${item.href}`}
+			href={`${item?.base_url ?? ''}/${item.href}`}
 			className={style.link}>
 			<div className={style.image}>
 				<Image
