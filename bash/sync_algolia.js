@@ -9,11 +9,35 @@ const index = client.initIndex('jscode');
 
 function addIndexToAlgolia() {
 	// export data
-	const files = fs.readdirSync(path.join('posts'));
+	const files = fs.readdirSync(path.join('data/posts'));
 
 	const records = files.map((item) => {
 		const markdownWithMeta = fs.readFileSync(
-			path.join('posts', item),
+			path.join('data/posts', item),
+			'utf-8'
+		);
+
+		let { data } = matter(markdownWithMeta);
+
+		data.title = data.title
+			.replace(/<br>/g, ' ')
+			.replace(/\s+/g, ' ')
+			.trim();
+		data.href = item.replace('.md', '');
+
+		return data;
+	});
+
+	index.saveObjects(records);
+}
+
+function addIndexToAlgoliaProject() {
+	// export data
+	const files = fs.readdirSync(path.join('data/projects'));
+
+	const records = files.map((item) => {
+		const markdownWithMeta = fs.readFileSync(
+			path.join('data/projects', item),
 			'utf-8'
 		);
 
@@ -32,3 +56,4 @@ function addIndexToAlgolia() {
 }
 
 addIndexToAlgolia();
+addIndexToAlgoliaProject();

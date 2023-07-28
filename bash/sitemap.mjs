@@ -9,7 +9,7 @@ console.log('');
 
 const generate = async () => {
 	const publicPath = path.join(process.cwd(), 'public', 'sitemap.xml');
-	const postPath = path.join(process.cwd(), 'posts');
+	const postPath = path.join(process.cwd(), 'data/posts');
 
 	const baseUrl = 'https://jscode.es';
 	let urls = `
