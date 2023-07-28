@@ -14,6 +14,7 @@
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	text-wrap: balance;
 }
 
 html,
@@ -26,6 +27,7 @@ body {
 	color: white;
 	background: var(--background-hex);
 	font-family: var(--font-family);
+	text-wrap: balance;
 }
 
 a {
