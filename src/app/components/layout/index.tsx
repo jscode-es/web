@@ -1,14 +1,14 @@
 import Head from 'next/head';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navigation } from '../navigation';
 import { TwitchLive } from '../twitch_live';
 
 import { TwitchRepository } from '../../../infrastruture/repository/twitch';
 /*
 import { Newsletter } from '../newsletter'; */
-import style from './style.module.css';
 import { useSocket } from '../../context/socket';
 import { LinkTo } from '../link';
+import style from './style.module.css';
 
 const twitch = new TwitchRepository();
 
@@ -70,7 +70,7 @@ export function Layout({ children, title, description }: any) {
 							/>
 							<LinkTo
 								href='https://www.youtube.com/channel/UCXLcSZzqpRzQ-FplONzCrMw'
-								text='Twitch'
+								text='Youtube'
 							/>
 							<LinkTo
 								href='https://www.instagram.com/jscode_es/'
