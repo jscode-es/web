@@ -75,10 +75,23 @@
 }
 
 .list > .link > h2 {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	color: #fffffff0;
 }
 
 .list > .link > p {
 	color: #7162b6;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+	.top{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.list > .link{
+		max-width: none;
+		width: 100%;
+	}
 }

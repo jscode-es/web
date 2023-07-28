@@ -124,7 +124,7 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 	/* CSS */
 	.searchBox {
-		background: purple;
+		
 		height: 40px;
 		border-radius: 10px;
 	}
@@ -138,7 +138,7 @@
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
 	/* CSS */
 	.searchBox {
-		background: orange;
+		
 	}
 }
 
