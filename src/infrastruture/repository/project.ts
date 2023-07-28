@@ -8,7 +8,7 @@ export class ProjectRepository implements Project {
 	private files: string[];
 
 	constructor() {
-		this.files = fs.readdirSync(path.join(__dirname,'../../../','data/projects'));
+		this.files = fs.readdirSync(path.join('data/projects'));
 	}
 
 	get(arg?: GetData) {
@@ -16,7 +16,7 @@ export class ProjectRepository implements Project {
 
 		const listProject = this.files.map((filename) => {
 			const markdownWithMeta = fs.readFileSync(
-				path.join(__dirname,'../../../','data/projects', filename),
+				path.join('data/projects', filename),
 				'utf-8'
 			);
 

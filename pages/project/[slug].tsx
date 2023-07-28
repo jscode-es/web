@@ -10,7 +10,7 @@ import { Layout } from '../../src/app/components/layout';
 import { CopyPasteCode } from '../../src/domain/copy_paste_code';
 
 export async function getStaticPaths() {
-	const files = fs.readdirSync(path.join(__dirname,'../../../../','data/projects'));
+	const files = fs.readdirSync(path.join('data/projects'));
 
 	const paths = files.map((filename) => ({
 		params: {
@@ -25,7 +25,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }: any) {
-	const filePath = path.join(__dirname,'../../../../','data/projects', slug + '.md');
+	const filePath = path.join('data/projects', slug + '.md');
 	const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
 	const { data: frontmatter, content } = matter(markdownWithMeta);
 
