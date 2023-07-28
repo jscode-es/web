@@ -6,10 +6,15 @@ export class TwitchRepository implements Twitch {
 		'https://player.twitch.tv/?channel=jscode_&parent=jscode.es';
 
 	async isLive(host: string) {
-		const response = await fetch(`${host}${this.pathname}`);
-		const data = await response.json();
 
-		return data.online;
+		try {
+			const response = await fetch(`${host}${this.pathname}`);
+			const data = await response.json();
+			return data.online;
+		} catch (error) {
+			console.error(error);
+			return false;
+		}
 	}
 
 	getIframeSrc() {

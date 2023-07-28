@@ -1,14 +1,13 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
 
-import { Courses, GetData, CourseData } from '../interfaces/courses';
+import { CourseData, Courses, GetData } from '../interfaces/courses';
 
 export class CourseRepository implements Courses {
 	private courses: string[];
 
 	constructor() {
-		this.courses = fs.readdirSync(path.join('courses'));
+		this.courses = fs.readdirSync(path.join(__dirname,'../../../','data/courses'));
 	}
 
 	get(arg?: GetData) {
@@ -17,7 +16,7 @@ export class CourseRepository implements Courses {
 		const listCourse = this.courses.map((filename) => {
 			const setting = JSON.parse(
 				fs.readFileSync(
-					path.join('courses', filename, 'setting.json'),
+					path.join(__dirname,'../../../','data/courses', filename, 'setting.json'),
 					'utf-8'
 				)
 			);

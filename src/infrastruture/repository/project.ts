@@ -2,21 +2,21 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
-import { ArticleData, Articles, GetData } from '../interfaces/articles';
+import { GetData, Project, ProjectData } from '../interfaces/project';
 
-export class ArticlesRepository implements Articles {
+export class ProjectRepository implements Project {
 	private files: string[];
 
 	constructor() {
-		this.files = fs.readdirSync(path.join(__dirname,'../../../','data/posts'));
+		this.files = fs.readdirSync(path.join(__dirname,'../../../','data/projects'));
 	}
 
 	get(arg?: GetData) {
 		const limit = arg?.limit || 4;
 
-		const listArticle = this.files.map((filename) => {
+		const listProject = this.files.map((filename) => {
 			const markdownWithMeta = fs.readFileSync(
-				path.join(__dirname,'../../../','data/posts', filename),
+				path.join(__dirname,'../../../','data/projects', filename),
 				'utf-8'
 			);
 
@@ -27,9 +27,9 @@ export class ArticlesRepository implements Articles {
 			return data;
 		});
 
-		const list = listArticle
+		const list = listProject
 			.sort((a, b) => this.getTime(b.date) - this.getTime(a.date))
-			.slice(0, limit) as ArticleData[];
+			.slice(0, limit) as ProjectData[];
 
 		return list;
 	}

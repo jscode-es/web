@@ -1,0 +1,84 @@
+.container {
+	width: 100%;
+	margin-bottom: 70px;
+	display: flex;
+	justify-content: center;
+	padding: 0 40px;
+}
+
+.content {
+	width: 100%;
+	max-width: 1400px;
+}
+
+.top {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+.top > div:nth-child(1)h1 {
+	color: #d9dbdc;
+}
+
+.top > div:nth-child(1) p {
+	color: #7162b6;
+}
+
+.btn {
+	background: #6366f1;
+	font-size: 17px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+}
+
+.list {
+	display: flex;
+	gap: 40px;
+	justify-content: flex-start;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.list > .link {
+	width: 100%;
+	max-width: 310px;
+	background: #0a1f33;
+	padding: 15px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.list > .link:hover {
+	background: #6640b252;
+	transform: translateY(-23px);
+}
+
+.list > .link > .image {
+	background: #1d192e;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	aspect-ratio: 8/5;
+}
+
+.list > .link > span {
+	color: #6366f1;
+	font-size: 15px;
+	margin-bottom: 10px;
+	display: block;
+}
+
+.list > .link > h2 {
+	margin-bottom: 20px;
+	color: #fffffff0;
+}
+
+.list > .link > p {
+	color: #7162b6;
+}
