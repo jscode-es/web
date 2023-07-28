@@ -19,8 +19,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }: any) {
 	const [course, part] = slug.split('-');
-	const coursePath = path.join('courses', course);
-	const filePath = path.join('courses', course, part + '.md');
+	const coursePath = path.join('data/courses', course);
+	const filePath = path.join('data/courses', course, part + '.md');
 	const markdownWithMeta = fs.readFileSync(filePath, 'utf-8');
 	const { data, content } = matter(markdownWithMeta);
 	const parts = fs
@@ -29,7 +29,7 @@ export async function getStaticProps({ params: { slug } }: any) {
 
 	const list = parts
 		.map((filename) => {
-			const coursePath = path.join('courses', course, filename);
+			const coursePath = path.join('data/courses', course, filename);
 			const markdownWithMeta = fs.readFileSync(coursePath, 'utf-8');
 			const { data } = matter(markdownWithMeta);
 			return {

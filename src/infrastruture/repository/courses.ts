@@ -34,7 +34,7 @@ export class CourseRepository implements Courses {
 	}
 
 	getPaths() {
-		const dir = path.join('courses');
+		const dir = path.join('data/courses');
 		const courses = fs.readdirSync(dir);
 		const paths: any = [];
 
