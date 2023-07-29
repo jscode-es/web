@@ -1,10 +1,15 @@
+.flex {
+	display: flex;
+	gap: 20px;
+}
+
 .container {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	gap: 40px;
-	max-width: 700px;
+	max-width: 1000px;
 	padding: 0 20px;
 }
 
@@ -31,6 +36,7 @@
 	font-size: 17px;
 	color: #cdd2ff;
 	line-height: 25px;
+	text-wrap: initial;
 }
 
 .content ul {
@@ -79,6 +85,20 @@
 
 .hide_mobile {
 	display: block;
+}
+
+.aside {
+	background: #1d192e;
+	min-width: 350px;
+	margin-right: 30px;
+	display: none;
+}
+
+/* media tablet */
+@media (min-width: 481px) and (max-width: 900px) {
+	.aside {
+		display: none;
+	}
 }
 
 @media (min-width: 0px) and (max-width: 480px) {

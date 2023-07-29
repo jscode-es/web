@@ -27,7 +27,6 @@ icon: speackme
 
 Speackme es una plataforma de streaming que permite a los creadores de contenido transmitir en directo a una audiencia global. Ya sea que estés presentando un seminario web, un evento en vivo, una clase o simplemente compartiendo tus pensamientos con el mundo, Speackme te brinda las herramientas para hacerlo de manera sencilla y efectiva.
 
-
 ### Características de Speackme
 
 #### 1. Transmisiones en Vivo
@@ -42,9 +41,12 @@ Además de las transmisiones en directo, Speackme también permite grabar tus pr
 
 Speackme ofrece herramientas para la interacción con la audiencia, como chats en vivo y sistemas de preguntas y respuestas, lo que permite una comunicación más cercana y directa con los espectadores.
 
-#### 4. Seguimiento de Código e Infraestructura
+#### 5. Multicanales
 
-En este blog, también realizaremos un seguimiento del código y la infraestructura del proyecto de Speackme. Exploraremos las tecnologías que respaldan la plataforma, las actualizaciones recientes del código y cómo se gestionan los desafíos de escalabilidad para mantener el servicio funcionando sin problemas.
+Un multicanal te brinda la ventaja de atraer y captar diferentes tipos de usuarios además de los que ya siguen tu canal principal. Al ofrecer contenido adicional y exclusivo a través de los canales adicionales, puedes atraer a una audiencia más amplia con intereses específicos y distintas preferencias de contenido
 
+#### 6. Canales privados
+
+Un canal privado es un espacio restringido dentro de una plataforma o sistema de comunicación que limita el acceso y la visibilidad del contenido solo a usuarios autorizados. En este tipo de canal, se establecen restricciones para garantizar que solo ciertos miembros o grupos seleccionados puedan acceder al contenido compartido en él. Los canales privados son ideales para mantener la confidencialidad de información, facilitar la comunicación segura y crear comunidades exclusivas para usuarios específicos
 
 ¡Gracias por leer este blog introductorio sobre Speackme! ¡Espero que hayas encontrado esta información interesante y útil!

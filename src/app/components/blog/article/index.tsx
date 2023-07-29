@@ -1,8 +1,8 @@
-import style from './style.module.css';
-import { Publish } from '../publish';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import Head from 'next/head';
+import { Publish } from '../publish';
+import style from './style.module.css';
 
 export function Article({
 	data: { title, subtitle, description, content, slug, tags, date },
@@ -45,27 +45,30 @@ export function Article({
 					content='JSCode'
 				/>
 			</Head>
-			<div className={style.container}>
-				<div className={style.headline}>
-					<h3>{subtitle}</h3>
-					<h1 dangerouslySetInnerHTML={{ __html: title }} />
-					<div className={style.portrait}>
-						<Image
-							src={src}
-							alt={description}
-							layout='fill'
-							blurDataURL='/assets/empty.png'
-							placeholder='blur'
-							onError={() => setSrc('/assets/empty.png')}
-						/>
+			<div className={style.flex}>
+				<div className={style.container}>
+					<div className={style.headline}>
+						<h3>{subtitle}</h3>
+						<h1 dangerouslySetInnerHTML={{ __html: title }} />
+						<div className={style.portrait}>
+							<Image
+								src={src}
+								alt={description}
+								layout='fill'
+								blurDataURL='/assets/empty.png'
+								placeholder='blur'
+								onError={() => setSrc('/assets/empty.png')}
+							/>
+						</div>
 					</div>
+					<Publish date={date} />
+					<div
+						className={style.content}
+						dangerouslySetInnerHTML={{ __html: content }}
+					/>
+					<Publish date={date} />
 				</div>
-				<Publish date={date} />
-				<div
-					className={style.content}
-					dangerouslySetInnerHTML={{ __html: content }}
-				/>
-				<Publish date={date} />
+				<div className={style.aside}>content aditional</div>
 			</div>
 		</>
 	);
